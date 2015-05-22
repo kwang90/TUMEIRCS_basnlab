@@ -1,0 +1,11 @@
+To get the documentation, please run within the main folder of bleEnergyModel:
+
+	doxygen Doxyfile
+
+on your shell. After that, you have the HTML-documentation in doc/html. For the LaTeX- Version, type 
+
+	make
+
+in the directory doc/latex on your shell to generate a PDF.
+
+

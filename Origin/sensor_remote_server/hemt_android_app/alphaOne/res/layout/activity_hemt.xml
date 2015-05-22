@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.alphaone.HemtActivity" >
+
+    <GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:columnCount="2" >
+
+        <TextView
+            android:id="@+id/textViewAccX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textViewAccY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_row="1"
+            android:text="TextView" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/textViewAccZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gridLayout1"
+        android:layout_below="@+id/gridLayout1"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageViewBluetoothConnection"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/textViewAccZ"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/bluetoothblue" />
+
+    <TextView
+        android:id="@+id/textViewAccMeanX"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAccZ"
+        android:layout_marginTop="41dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewAccMeanY"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textViewAccMeanX"
+        android:layout_below="@+id/textViewAccMeanX"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewAccMeanZ"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textViewAccMeanY"
+        android:layout_below="@+id/textViewAccMeanY"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewAccCorXY"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAccMeanZ"
+        android:layout_marginTop="44dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewAccCorXZ"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewAccCorXY"
+        android:layout_below="@+id/textViewAccCorXY"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewAccCorYZ"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewAccCorXZ"
+        android:layout_below="@+id/textViewAccCorXZ"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/radioButtonStand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewAccCorYZ"
+        android:layout_below="@+id/textViewAccCorYZ"
+        android:layout_marginTop="38dp"
+        android:checked="true"
+        android:text="Stand"
+        android:onClick="onRadioButtonClicked" />
+
+    <RadioButton
+        android:id="@+id/radioButtonWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonStand"
+        android:layout_below="@+id/radioButtonStand"
+        android:text="Walk"
+        android:onClick="onRadioButtonClicked" />
+
+    <RadioButton
+        android:id="@+id/radioButtonRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonWalk"
+        android:layout_below="@+id/radioButtonWalk"
+        android:text="Run"
+        android:onClick="onRadioButtonClicked" />
+
+    <Button
+        android:id="@+id/buttonRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioButtonRun"
+        android:layout_toLeftOf="@+id/imageViewBluetoothConnection"
+        android:text="Record"
+        android:onClick="recordData" />
+
+    <TextView
+        android:id="@+id/textViewPrediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/radioButtonStand"
+        android:layout_below="@+id/radioButtonRun"
+        android:layout_marginTop="24dp"
+        android:text="TextView" />
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+CC 	=	arm-none-eabi-gcc
+CFLAGS 	=	-DSBLE_PLATTFORM_ARCHITECTURE=SBLE_PLATTFORM_ARCHITECTURE_STM32F4_FREERTOS -g
+OBJ 	= 	$(patsubst %.c,%.o,$(wildcard src/*.c)) $(patsubst %.c,%.o,$(wildcard src/ports/FreeRTOS/*.c)) $(patsubst %.c,%.o,$(wildcard bglib/*.c))
+INCLUDE	=	-Iinclude \
+		-Ibglib \
+		-I../freeRTOS/include \
+		-I../freeRTOS/portable/GCC/ARM_CM4F \
+		-I../sensor_node/psp \
+		-I../sensor_node/psp/freeRTOSSupport
+
+all: archive
+
+archive: $(OBJ)
+	ar rcs sble_stm32f4_freeRTOS.a *.o;
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+
+
+.PHONY clean, realclean:
+
+clean:
+	rm *.o
+	rm *.d
+	
+
+realclean: clean
+	rm sble_stm32f4_freeRTOS.a
+

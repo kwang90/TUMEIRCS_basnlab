@@ -1,0 +1,277 @@
+\hypertarget{classhe2mt_s_d_i_rest}{\section{he2mt\-S\-D\-I\-Rest Class Reference}
+\label{classhe2mt_s_d_i_rest}\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}}
+}
+Inheritance diagram for he2mt\-S\-D\-I\-Rest\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classhe2mt_s_d_i_rest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhe2mt_s_d_i_rest_a58491a38bc87bfee5dac76cbee00a38b}{virtual void \hyperlink{classhe2mt_s_d_i_rest_a58491a38bc87bfee5dac76cbee00a38b}{init} ()}\label{classhe2mt_s_d_i_rest_a58491a38bc87bfee5dac76cbee00a38b}
+
+\begin{DoxyCompactList}\small\item\em Initialization function. This function will be called once before any other function is called. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_rest_a0329117af57c9da6e436278c8df04a81}{authorize} (char $\ast$application\-I\-D, char $\ast$application\-Secret, char $\ast$username, char $\ast$password)
+\begin{DoxyCompactList}\small\item\em authorize sensor aggregation system against remote side This function authorizes the sensor aggregation system against the replication framework and/or appserver. It is oauth-\/compatible. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_rest_a954e27119d8e8f5209146afa975711eb}{set\-Sensor\-Data} (\hyperlink{classhe2mt_s_d_i_ad0bd9136f18c52d27b93cfca85bf05dd}{dataslot\-\_\-t} data\-Slot, char $\ast$sensor\-Address, char $\ast$time\-Stamp\-Sensor, double sampling\-Period, uint32\-\_\-t n\-Values, void $\ast$value\-List)
+\begin{DoxyCompactList}\small\item\em write new sensor data This function is called whenever sensor data \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_rest_a6af63eeedd983928ffed540a244218f3}{disconnect} ()
+\begin{DoxyCompactList}\small\item\em disconnect S\-A\-S from the A\-S/\-R\-F. This function is called when the sensor interface wishes to unregister with the A\-S/\-R\-F. The expected behaviour is that the authorization is invalidated. \end{DoxyCompactList}\item 
+virtual \hyperlink{classhe2mt_s_d_i_aa527ccf96fd5eacc154c1c23e56fc9fd}{errorcode\-\_\-t} \hyperlink{classhe2mt_s_d_i_rest_acaf62f7b38b6c855465c2059d106ee21}{get\-Last\-Error} ()
+\begin{DoxyCompactList}\small\item\em Get the number of the last error that hasoccurred. \end{DoxyCompactList}\item 
+virtual void $\ast$ \hyperlink{classhe2mt_s_d_i_rest_a0adf7ecd30a44528631e374ec5822a29}{get\-Application\-Error\-Info} ()
+\begin{DoxyCompactList}\small\item\em Get implementation-\/specific information ont the error. \end{DoxyCompactList}\item 
+void \hyperlink{classhe2mt_s_d_i_rest_a2f34f8612953d2c1402bc2ddaf0ed3e9}{get\-Ident} (char $\ast$ident)
+\begin{DoxyCompactList}\small\item\em Provides a string containing an identifier (i.\-e. Name) of the class that implements the \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface}. \end{DoxyCompactList}\item 
+bool \hyperlink{classhe2mt_s_d_i_rest_a2d5f9bf0e405bce69baf6486409c4ad5}{set\-Param} (const char $\ast$param, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set param \char`\"{}ident\char`\"{} to value \char`\"{}value\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{classhe2mt_s_d_i_rest_a4c351a302baa5e698b45836f4ddb948c}{get\-Param} (const char $\ast$param, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read out a param. Read out a param. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{classhe2mt_s_d_i_rest_a94793e0a2d3a3f190430c14d5571c6a3}{get\-Param\-List} ()
+\begin{DoxyCompactList}\small\item\em Generates a machine-\/readable list of all parameters available param List format (E\-B\-N\-F)\-: Ascii string that is fomratted like follows. param\-List = \{param\-Line\}\par
+ param\-Line = ident \char`\"{}$|$\char`\"{} decident \char`\"{}$|$\char`\"{} limit\-Min \char`\"{}$|$\char`\"{} limit\-Max \char`\"{}\textbackslash{}n\char`\"{}\par
+ ident \-: string identifiing the param, must be compatible with the first param of \hyperlink{classhe2mt_s_d_i_rest_a4c351a302baa5e698b45836f4ddb948c}{get\-Param()};\par
+ decident \-: decident. The first character identifies the value type of the param. Possible values\-:\par
+ \char`\"{}f\char`\"{}\-: float\par
+ \char`\"{}d\char`\"{}\-: decimal\par
+ \char`\"{}s\char`\"{}\-: string\par
+ in case of floats, \char`\"{}f\char`\"{} ma be follwoed by the number of decimals. Example\-: \char`\"{}f11\char`\"{} =$>$ 11 decimals precision\par
+ limit\-Min \-:floating point number specifyng the minimal value of the param. ignored for strings\par
+ limit\-Max \-:floating point number specifying the maximal value of the param. For strings, if 0, the string can have abitrary lenght. Other wise, the max lenght will be set to this value\par
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classhe2mt_s_d_i_rest_a0329117af57c9da6e436278c8df04a81}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!authorize@{authorize}}
+\index{authorize@{authorize}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{authorize}]{\setlength{\rightskip}{0pt plus 5cm}bool he2mt\-S\-D\-I\-Rest\-::authorize (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{application\-I\-D, }
+\item[{char $\ast$}]{application\-Secret, }
+\item[{char $\ast$}]{username, }
+\item[{char $\ast$}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a0329117af57c9da6e436278c8df04a81}
+
+
+authorize sensor aggregation system against remote side This function authorizes the sensor aggregation system against the replication framework and/or appserver. It is oauth-\/compatible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em application\-I\-D} & String containing the application I\-D \\
+\hline
+{\em application\-Secret} & String containing the application secret \\
+\hline
+{\em username} & string containing the username \\
+\hline
+{\em password} & string containing the passwort of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if successful; False, otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classhe2mt_s_d_i_ae5212f96e535b795b11fd34a89a3d616}{he2mt\-S\-D\-I}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a6af63eeedd983928ffed540a244218f3}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool he2mt\-S\-D\-I\-Rest\-::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a6af63eeedd983928ffed540a244218f3}
+
+
+disconnect S\-A\-S from the A\-S/\-R\-F. This function is called when the sensor interface wishes to unregister with the A\-S/\-R\-F. The expected behaviour is that the authorization is invalidated. 
+
+\begin{DoxyReturn}{Returns}
+t 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classhe2mt_s_d_i_a7f9d573e91544cc1436dab6bf1a889cf}{he2mt\-S\-D\-I}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a0adf7ecd30a44528631e374ec5822a29}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!get\-Application\-Error\-Info@{get\-Application\-Error\-Info}}
+\index{get\-Application\-Error\-Info@{get\-Application\-Error\-Info}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{get\-Application\-Error\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ he2mt\-S\-D\-I\-Rest\-::get\-Application\-Error\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a0adf7ecd30a44528631e374ec5822a29}
+
+
+Get implementation-\/specific information ont the error. 
+
+\begin{DoxyReturn}{Returns}
+error information 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classhe2mt_s_d_i_ab95b4854cfc4841a7f2dae073fa011fe}{he2mt\-S\-D\-I}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a2f34f8612953d2c1402bc2ddaf0ed3e9}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!get\-Ident@{get\-Ident}}
+\index{get\-Ident@{get\-Ident}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{get\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}void he2mt\-S\-D\-I\-Rest\-::get\-Ident (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ident}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a2f34f8612953d2c1402bc2ddaf0ed3e9}
+
+
+Provides a string containing an identifier (i.\-e. Name) of the class that implements the \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Non-\/empty, writable buffer of at least 256 bytes of space to write the name into. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classgeneric_param_interface_af210b50a000af4466a17dff15c84bd4a}{generic\-Param\-Interface}.
+
+\hypertarget{classhe2mt_s_d_i_rest_acaf62f7b38b6c855465c2059d106ee21}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!get\-Last\-Error@{get\-Last\-Error}}
+\index{get\-Last\-Error@{get\-Last\-Error}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{get\-Last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf he2mt\-S\-D\-I\-::errorcode\-\_\-t} he2mt\-S\-D\-I\-Rest\-::get\-Last\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_acaf62f7b38b6c855465c2059d106ee21}
+
+
+Get the number of the last error that hasoccurred. 
+
+\begin{DoxyReturn}{Returns}
+Error code of the last error that has occurred. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classhe2mt_s_d_i_a2f0bf651098d94ab7ffc04f7b3b00fdf}{he2mt\-S\-D\-I}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a4c351a302baa5e698b45836f4ddb948c}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!get\-Param@{get\-Param}}
+\index{get\-Param@{get\-Param}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{get\-Param}]{\setlength{\rightskip}{0pt plus 5cm}bool he2mt\-S\-D\-I\-Rest\-::get\-Param (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ident, }
+\item[{char $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a4c351a302baa5e698b45836f4ddb948c}
+
+
+Read out a param. Read out a param. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Paremter identification string. Memory management is to be done by the caller. \\
+\hline
+{\em value} & A writable, empty buffer to be filled by the called function. Memory management is to be done by the caller. At least 256 bytes of buffer need to be provided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false, if not 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}{generic\-Param\-Interface}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a94793e0a2d3a3f190430c14d5571c6a3}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!get\-Param\-List@{get\-Param\-List}}
+\index{get\-Param\-List@{get\-Param\-List}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{get\-Param\-List}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ he2mt\-S\-D\-I\-Rest\-::get\-Param\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a94793e0a2d3a3f190430c14d5571c6a3}
+
+
+Generates a machine-\/readable list of all parameters available param List format (E\-B\-N\-F)\-: Ascii string that is fomratted like follows. param\-List = \{param\-Line\}\par
+ param\-Line = ident \char`\"{}$|$\char`\"{} decident \char`\"{}$|$\char`\"{} limit\-Min \char`\"{}$|$\char`\"{} limit\-Max \char`\"{}\textbackslash{}n\char`\"{}\par
+ ident \-: string identifiing the param, must be compatible with the first param of \hyperlink{classhe2mt_s_d_i_rest_a4c351a302baa5e698b45836f4ddb948c}{get\-Param()};\par
+ decident \-: decident. The first character identifies the value type of the param. Possible values\-:\par
+ \char`\"{}f\char`\"{}\-: float\par
+ \char`\"{}d\char`\"{}\-: decimal\par
+ \char`\"{}s\char`\"{}\-: string\par
+ in case of floats, \char`\"{}f\char`\"{} ma be follwoed by the number of decimals. Example\-: \char`\"{}f11\char`\"{} =$>$ 11 decimals precision\par
+ limit\-Min \-:floating point number specifyng the minimal value of the param. ignored for strings\par
+ limit\-Max \-:floating point number specifying the maximal value of the param. For strings, if 0, the string can have abitrary lenght. Other wise, the max lenght will be set to this value\par
+ 
+
+\begin{DoxyReturn}{Returns}
+String containing the parameter list. It will be alloc'ed by the function using malloc() and should be free'd after use using free() 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classgeneric_param_interface_a10302cc5d418fff17ff222c2d74fc13d}{generic\-Param\-Interface}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a2d5f9bf0e405bce69baf6486409c4ad5}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!set\-Param@{set\-Param}}
+\index{set\-Param@{set\-Param}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{set\-Param}]{\setlength{\rightskip}{0pt plus 5cm}bool he2mt\-S\-D\-I\-Rest\-::set\-Param (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ident, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a2d5f9bf0e405bce69baf6486409c4ad5}
+
+
+Set param \char`\"{}ident\char`\"{} to value \char`\"{}value\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Paremter identification string. Memory management is to be done by the caller. \\
+\hline
+{\em value} & A buffer containing the value to be set. Memory management is to be done by the caller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classgeneric_param_interface_aeb0cf7b216209f4514f5285c3d57f5fd}{generic\-Param\-Interface}.
+
+\hypertarget{classhe2mt_s_d_i_rest_a954e27119d8e8f5209146afa975711eb}{\index{he2mt\-S\-D\-I\-Rest@{he2mt\-S\-D\-I\-Rest}!set\-Sensor\-Data@{set\-Sensor\-Data}}
+\index{set\-Sensor\-Data@{set\-Sensor\-Data}!he2mtSDIRest@{he2mt\-S\-D\-I\-Rest}}
+\subsubsection[{set\-Sensor\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool he2mt\-S\-D\-I\-Rest\-::set\-Sensor\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf dataslot\-\_\-t}}]{data\-Slot, }
+\item[{char $\ast$}]{sensor\-Address, }
+\item[{char $\ast$}]{time\-Stamp\-Sensor, }
+\item[{double}]{sampling\-Period, }
+\item[{uint32\-\_\-t}]{n\-Values, }
+\item[{void $\ast$}]{value\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classhe2mt_s_d_i_rest_a954e27119d8e8f5209146afa975711eb}
+
+
+write new sensor data This function is called whenever sensor data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-Slot} & A data slot identifying the type of data that is to be written (e.\-g., detected activities, raw acceleration, ...) \\
+\hline
+{\em sensor\-Address} & The M\-A\-C adress of the sensor as a string. \\
+\hline
+{\em time\-Stamp\-Sensor} & Time stamp of the first data value created on the sensor \\
+\hline
+{\em n\-Values} & The number of values in value\-List \\
+\hline
+{\em value\-List} & Pointer to a list of values. The type of the values is determined by the data\-Slot. It must be allocated and free'ed by the caller. However, the caller does not need to guaranty the existance of the buffer once the function has compleeted. \\
+\hline
+{\em sampling\-Period,\-:} & Time \mbox{[}s\mbox{]} inb etween two samples. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if successful; False, otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classhe2mt_s_d_i_a775fcd2c08e923050b76aa750895a983}{he2mt\-S\-D\-I}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/implementations/\hyperlink{he2mt_s_d_i_rest_8hpp}{he2mt\-S\-D\-I\-Rest.\-hpp}\item 
+/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/implementations/he2mt\-S\-D\-I\-Rest.\-cpp\end{DoxyCompactItemize}

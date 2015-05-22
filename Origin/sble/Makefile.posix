@@ -1,0 +1,23 @@
+CC 	=	gcc
+CFLAGS 	=	-DSBLE_PLATTFORM_ARCHITECTURE=SBLE_PLATTFORM_ARCHITECTURE_POSIX -g
+OBJ 	= 	$(patsubst %.c,%.o,$(wildcard src/*.c)) $(patsubst %.c,%.o,$(wildcard src/ports/POSIX/*.c)) $(patsubst %.c,%.o,$(wildcard bglib/*.c))
+INCLUDE	=	-Iinclude -Ibglib -Iinclude/ports/POSIX
+
+all: archive
+
+archive: $(OBJ)
+	ar rcs sble_posix.a *.o;
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+
+.PHONY clean, realclean:
+
+clean:
+	rm *.o
+	
+
+realclean: clean
+	rm sble_posix.a
+

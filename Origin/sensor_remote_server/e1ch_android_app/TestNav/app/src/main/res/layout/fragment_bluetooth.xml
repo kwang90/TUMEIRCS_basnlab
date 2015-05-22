@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity$Bluetooth"> <!--tools:context="com.example.matze.testnav.Bluetooth"-->
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan"
+        android:id="@+id/buttonScan"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="511dp"
+        android:id="@+id/listViewBleDevices"
+        android:layout_gravity="left|top" />
+
+</FrameLayout>

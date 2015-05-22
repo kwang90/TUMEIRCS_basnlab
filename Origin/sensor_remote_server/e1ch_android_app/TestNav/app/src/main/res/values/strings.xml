@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HE2mt</string>
+
+    <string name="title_section1">MOTION CONTROL</string>
+    <string name="title_section2">ROOM MONITORING</string>
+    <string name="title_section3">BLUETOOTH</string>
+    <string name="title_section4">SETTINGS</string>
+    <string name="title_section5">DEVELOPMENT</string>
+
+    <string name="foreground_service">HE2MT SERVICE</string>
+
+    <string name="notification_title">FOREGROUND SERVICE</string>
+    <string name="notification_message">MY HE2MT SERVICE IS RUNNING</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

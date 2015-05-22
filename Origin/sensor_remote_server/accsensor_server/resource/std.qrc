@@ -1,0 +1,31 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>rcslogo_c_transparent.png</file>
+    <file>kreispfeil.png</file>
+    <file>rcslogo_c_hell_big.png</file>
+    <file>ble_pcb_transparent_small.png</file>
+    <file>Logo_HE2mT_small_transparent.png</file>
+    <file>unknown.gif</file>
+    <file>gifwalking2.gif</file>
+    <file>gifresting2.gif</file>
+    <file>gifrunning2.gif</file>
+    <file>actititydetection.svg</file>
+    <file>activitydetection.png</file>
+    <file>arrow_left.png</file>
+    <file>arrow_right.png</file>
+    <file>interconnect.png</file>
+    <file>interconnect.svg</file>
+    <file>manchoose.png</file>
+    <file>manchoose.svg</file>
+    <file>person.png</file>
+    <file>person.svg</file>
+    <file>lock.png</file>
+    <file>processor.png</file>
+    <file>processor.svg</file>
+    <file>rcslogo_c_hell.png</file>
+    <file>signal_processing.png</file>
+    <file>std.qrc</file>
+    <file>wireless.png</file>
+    <file>wireless.svg</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,24 @@
+CC 	=	arm-none-eabi-gcc
+CFLAGS 	=	-D DTP_CFG_PLATTFORM DTP_CFG_PLATTFORM_STM32F4_FREERTOS
+OBJ 	= 	$(patsubst %.c,%.o,$(wildcard *.c)) 
+INCLUDE	=	
+
+all: archive
+
+archive: $(OBJ)
+	ar rcs libdtp_freertos.a *.o;
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+
+
+.PHONY clean, realclean:
+
+clean:
+	rm *.o
+	
+
+realclean: clean
+	rm libdtp_freertos.a
+

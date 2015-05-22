@@ -1,0 +1,23 @@
+Using accsensor_server with HE2mT Sensor Data Interface (SDI)
+
+accsensor_server can stream its data via a the HE2mT SDI. Therefore, it can either be linked dynamically or statically.
+
+- Static linking:
+
+make clean
+qmake-qt4 accsensor_server_staticlinkage.pro
+make
+
+
+-Dynamic linking:
+place a libhe2mtSDI.so -file into your accsensor_server directory. Then, build it with dynamic linkage:
+
+make clean
+qmake-qt4 accsensor_server_dynlinkage.pro
+make
+
+before executing, type
+export LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):./
+
+
+

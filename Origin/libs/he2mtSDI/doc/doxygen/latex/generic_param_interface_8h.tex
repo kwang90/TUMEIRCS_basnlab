@@ -1,0 +1,42 @@
+\hypertarget{generic_param_interface_8h}{\section{/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/generic\-Param\-Interface.h File Reference}
+\label{generic_param_interface_8h}\index{/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/generic\-Param\-Interface.\-h@{/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/generic\-Param\-Interface.\-h}}
+}
+
+
+A generic interface to exchange parameters with a class derived from it.  
+
+
+{\ttfamily \#include $<$inttypes.\-h$>$}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface}
+\begin{DoxyCompactList}\small\item\em Class that allows the exchange of parameter values in a generic way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic interface to exchange parameters with a class derived from it. \begin{DoxyCopyright}{Copyright}
+(c) 2011,2014 Philipp Kindt \href{mailto:kindt@rcs.ei.tum.de}{\tt kindt@rcs.\-ei.\-tum.\-de}
+\end{DoxyCopyright}
+This class is for debugging purposes, only. It is not part of the interface. In Java, the class \hyperlink{classhe2mt_s_d_i}{he2mt\-S\-D\-I} won't derive it. In c++, you can safely ignore it as a dummy implementation comes with the code allready.
+
+The class is used as a generic interface between classes to exchange certain parameters in a standardized, convenient way. This enables for example the automatic creation of G\-U\-Is modifying these parameters.
+
+Classes that derive from this class must implement its functions and have to take care to comply with the specifications below. If the specifications are met, params can be exchanged with the class implementing this interface with any other class -\/ without the exchange partner having to know anything of your class that implements Generic\-Param\-Interface, except the fact that Generic\-Param\-Interface is a base class.
+
+-\/\-Each string used for param exchange can have max. 255 characters -\/\-Each param is a key-\/value-\/pair. The ident of a param gives it a name and is an arbitrary string. -\/\-The value of the param is a string, containing the value of the param. -\/\-For decimal and floating point values, the format is the string representation of the number (for example, valid value would be\-: \char`\"{}10\char`\"{}, \char`\"{}-\/1\char`\"{}, \char`\"{}0.\-34\char`\"{}, \char`\"{}-\/0.\-24\char`\"{}) -\/\-For string values, any string can be transported -\/get\-Param will fill a string buffer that has to have at least 256 bytes with the current value -\/set\-Param will set the param -\/get\-Param\-List will return a list of all params available for that class having the format specified. It will allocate the buffer needed for that, and the application has to de\-Alloc the buffer by calling free() param List format (E\-B\-N\-F)\-: Ascii file that is fomatted like that\-:
+\begin{DoxyItemize}
+\item param\-List = \{param\-Line\}
+\item param\-Line = ident \char`\"{}$|$\char`\"{} decident \char`\"{}$|$\char`\"{} limit\-Min \char`\"{}$|$\char`\"{} limit\-Max \char`\"{}\textbackslash{}n\char`\"{}
+\begin{DoxyItemize}
+\item ident \-: string identifiing the param, must be compatible with the first param of get\-Param();
+\item decident \-: decident. The first character identifies the value type of the param. Possible values\-: \char`\"{}f\char`\"{}\-: float\par
+ \char`\"{}d\char`\"{}\-: decimal\par
+ \char`\"{}s\char`\"{}\-: string\par
+ in case of floats, \char`\"{}f\char`\"{} ma be follwoed by the number of decimals. Example\-: \char`\"{}f11\char`\"{} =$>$ 11 decimals precision\par
+
+\item limit\-Min \-:floating point number specifyng the minimal value of the param. ignored for strings
+\item limit\-Max \-:floating point number specifying the maximal value of the param. For strings, if 0, the string can have abitrary lenght. Other wise, the max lenght will be set to this value 
+\end{DoxyItemize}
+\end{DoxyItemize}

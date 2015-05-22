@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.alphaone.ScanActivity" >
+
+    <ProgressBar
+        android:id="@+id/progressBarScan"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonScan"
+        android:layout_alignRight="@+id/buttonScan"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="30dp"
+        android:clickable="false"
+        android:longClickable="false" />
+
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_width="419dp"
+        android:layout_height="108dp"
+        android:layout_alignLeft="@+id/listViewBleDevices"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listViewBleDevices"
+        android:layout_marginBottom="15dp"
+        android:onClick="startScan"
+        android:text="Scan for Bluetooth devices" />
+
+    <ListView
+        android:id="@+id/listViewBleDevices"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_above="@+id/buttonScan"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+
+</RelativeLayout>

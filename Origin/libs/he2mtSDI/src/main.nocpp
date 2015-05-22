@@ -1,0 +1,22 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 06.05.2014
+ *      Author: kindt
+ */
+#include "implementations/he2mtSDIRest.hpp"
+
+/*
+int main(){
+	float values[6] = {1,2,3,4,5,6};
+	uint32_t activity = HE2MT_SDI_DATA_SLOT_ACTIVITY_VALUE_WALKING;
+	he2mtSDIRest r;
+	r.init();
+	if(r.authorize("id","secret","he2mt_user","he2mt_user")){
+		r.setSensorData(HE2MT_SDI_DATA_SLOT_ACTIVITY,"0","0",0.01,1,&activity);
+		r.setSensorData(HE2MT_SDI_DATA_SLOT_RAWACC,"0","0",0.01,2,&values);
+
+	}
+	r.disconnect();
+}
+*/

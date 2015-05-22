@@ -1,0 +1,15 @@
+/*
+ * virThread_platform.h
+ *
+ *  Created on: 20.11.2013
+ *      Author: kindt
+ */
+
+#ifndef VIRTHREAD_PLATFORM_H_
+#define VIRTHREAD_PLATFORM_H_
+
+#define VIRTHREAD_PLATFORM_ARCHITECTURE_POSIX 1
+#define VIRTHREAD_PLATFORM_ARCHITECTURE_STM32F4_FREERTOS 2
+
+
+#endif /* VIRTHREAD_PLATFORM_H_ */

@@ -1,0 +1,134 @@
+\hypertarget{classgeneric_param_interface}{\section{generic\-Param\-Interface Class Reference}
+\label{classgeneric_param_interface}\index{generic\-Param\-Interface@{generic\-Param\-Interface}}
+}
+
+
+Class that allows the exchange of parameter values in a generic way.  
+
+
+
+
+{\ttfamily \#include $<$generic\-Param\-Interface.\-h$>$}
+
+Inheritance diagram for generic\-Param\-Interface\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgeneric_param_interface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}{get\-Param} (const char $\ast$ident, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read out a param. Read out a param. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classgeneric_param_interface_aeb0cf7b216209f4514f5285c3d57f5fd}{set\-Param} (const char $\ast$ident, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set param \char`\"{}ident\char`\"{} to value \char`\"{}value\char`\"{}. \end{DoxyCompactList}\item 
+virtual char $\ast$ \hyperlink{classgeneric_param_interface_a10302cc5d418fff17ff222c2d74fc13d}{get\-Param\-List} ()
+\begin{DoxyCompactList}\small\item\em Generates a machine-\/readable list of all parameters available param List format (E\-B\-N\-F)\-: Ascii string that is fomratted like follows. param\-List = \{param\-Line\}\par
+ param\-Line = ident \char`\"{}$|$\char`\"{} decident \char`\"{}$|$\char`\"{} limit\-Min \char`\"{}$|$\char`\"{} limit\-Max \char`\"{}\textbackslash{}n\char`\"{}\par
+ ident \-: string identifiing the param, must be compatible with the first param of \hyperlink{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}{get\-Param()};\par
+ decident \-: decident. The first character identifies the value type of the param. Possible values\-:\par
+ \char`\"{}f\char`\"{}\-: float\par
+ \char`\"{}d\char`\"{}\-: decimal\par
+ \char`\"{}s\char`\"{}\-: string\par
+ in case of floats, \char`\"{}f\char`\"{} ma be follwoed by the number of decimals. Example\-: \char`\"{}f11\char`\"{} =$>$ 11 decimals precision\par
+ limit\-Min \-:floating point number specifyng the minimal value of the param. ignored for strings\par
+ limit\-Max \-:floating point number specifying the maximal value of the param. For strings, if 0, the string can have abitrary lenght. Other wise, the max lenght will be set to this value\par
+ \end{DoxyCompactList}\item 
+virtual void \hyperlink{classgeneric_param_interface_af210b50a000af4466a17dff15c84bd4a}{get\-Ident} (char $\ast$ident)
+\begin{DoxyCompactList}\small\item\em Provides a string containing an identifier (i.\-e. Name) of the class that implements the \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that allows the exchange of parameter values in a generic way. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classgeneric_param_interface_af210b50a000af4466a17dff15c84bd4a}{\index{generic\-Param\-Interface@{generic\-Param\-Interface}!get\-Ident@{get\-Ident}}
+\index{get\-Ident@{get\-Ident}!genericParamInterface@{generic\-Param\-Interface}}
+\subsubsection[{get\-Ident}]{\setlength{\rightskip}{0pt plus 5cm}virtual void generic\-Param\-Interface\-::get\-Ident (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ident}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classgeneric_param_interface_af210b50a000af4466a17dff15c84bd4a}
+
+
+Provides a string containing an identifier (i.\-e. Name) of the class that implements the \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Non-\/empty, writable buffer of at least 256 bytes of space to write the name into. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}{\index{generic\-Param\-Interface@{generic\-Param\-Interface}!get\-Param@{get\-Param}}
+\index{get\-Param@{get\-Param}!genericParamInterface@{generic\-Param\-Interface}}
+\subsubsection[{get\-Param}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool generic\-Param\-Interface\-::get\-Param (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ident, }
+\item[{char $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}
+
+
+Read out a param. Read out a param. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Paremter identification string. Memory management is to be done by the caller. \\
+\hline
+{\em value} & A writable, empty buffer to be filled by the called function. Memory management is to be done by the caller. At least 256 bytes of buffer need to be provided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false, if not 
+\end{DoxyReturn}
+\hypertarget{classgeneric_param_interface_a10302cc5d418fff17ff222c2d74fc13d}{\index{generic\-Param\-Interface@{generic\-Param\-Interface}!get\-Param\-List@{get\-Param\-List}}
+\index{get\-Param\-List@{get\-Param\-List}!genericParamInterface@{generic\-Param\-Interface}}
+\subsubsection[{get\-Param\-List}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ generic\-Param\-Interface\-::get\-Param\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classgeneric_param_interface_a10302cc5d418fff17ff222c2d74fc13d}
+
+
+Generates a machine-\/readable list of all parameters available param List format (E\-B\-N\-F)\-: Ascii string that is fomratted like follows. param\-List = \{param\-Line\}\par
+ param\-Line = ident \char`\"{}$|$\char`\"{} decident \char`\"{}$|$\char`\"{} limit\-Min \char`\"{}$|$\char`\"{} limit\-Max \char`\"{}\textbackslash{}n\char`\"{}\par
+ ident \-: string identifiing the param, must be compatible with the first param of \hyperlink{classgeneric_param_interface_a8d3d4123db419e649fe73adf4b498135}{get\-Param()};\par
+ decident \-: decident. The first character identifies the value type of the param. Possible values\-:\par
+ \char`\"{}f\char`\"{}\-: float\par
+ \char`\"{}d\char`\"{}\-: decimal\par
+ \char`\"{}s\char`\"{}\-: string\par
+ in case of floats, \char`\"{}f\char`\"{} ma be follwoed by the number of decimals. Example\-: \char`\"{}f11\char`\"{} =$>$ 11 decimals precision\par
+ limit\-Min \-:floating point number specifyng the minimal value of the param. ignored for strings\par
+ limit\-Max \-:floating point number specifying the maximal value of the param. For strings, if 0, the string can have abitrary lenght. Other wise, the max lenght will be set to this value\par
+ 
+
+\begin{DoxyReturn}{Returns}
+String containing the parameter list. It will be alloc'ed by the function using malloc() and should be free'd after use using free() 
+\end{DoxyReturn}
+\hypertarget{classgeneric_param_interface_aeb0cf7b216209f4514f5285c3d57f5fd}{\index{generic\-Param\-Interface@{generic\-Param\-Interface}!set\-Param@{set\-Param}}
+\index{set\-Param@{set\-Param}!genericParamInterface@{generic\-Param\-Interface}}
+\subsubsection[{set\-Param}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool generic\-Param\-Interface\-::set\-Param (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ident, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classgeneric_param_interface_aeb0cf7b216209f4514f5285c3d57f5fd}
+
+
+Set param \char`\"{}ident\char`\"{} to value \char`\"{}value\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & Paremter identification string. Memory management is to be done by the caller. \\
+\hline
+{\em value} & A buffer containing the value to be set. Memory management is to be done by the caller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/\hyperlink{generic_param_interface_8h}{generic\-Param\-Interface.\-h}\end{DoxyCompactItemize}

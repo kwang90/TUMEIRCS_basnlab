@@ -1,0 +1,66 @@
+/*
+ * main.c
+ *
+ *  Created on: 12.03.2013
+ *      Author: kindt
+ */
+
+
+#include "dtp_chunc.h"
+#include "dtp_frame.h"
+#include "dtp_bitstream.h"
+#include <stdio.h>
+int main(){
+	dtp_frame f;
+	dtp_frame_init(&f);
+	dtp_chunc a,b;
+	int payload_1 = 0xcaffee12;
+	double payload_2 = 0.012345;
+	printf("size of payload_2: %u\n",sizeof(payload_2));
+	a.type_id = 10;
+	a.data = (void*) &payload_1;
+	a.size = sizeof(payload_1);
+	b.type_id = 22;
+	b.data = (void*) &payload_2;
+	b.size = sizeof(payload_2);
+	dtp_frame_add_chunc(&f,&a);
+	dtp_frame_add_chunc(&f,&b);
+
+	dtp_chunc* tmp;
+	tmp = dtp_frame_get_chunc_by_id(&f,22);
+	if(tmp == NULL){
+		printf("null\n");
+	}else{
+		printf("2: %f\n",*((double*) tmp->data));
+	}
+	tmp = dtp_frame_get_chunc_by_id(&f,10);
+
+	if(tmp == NULL){
+		printf("null\n");
+	}else{
+		printf("1: %d\n",*((int*) tmp->data));
+	}
+
+
+	uint8_t* bitstream = dtp_bitstream_generate(&f,NULL,NULL);
+	//dtp_bitstream_print(bitstream);
+
+
+	dtp_frame_destroy(&f,0,0);
+	dtp_frame* ftmp = dtp_frame_generate(bitstream);
+	dtp_frame_print(ftmp);
+
+	tmp = dtp_frame_get_chunc_by_id(&f,1);
+	if(tmp == NULL){
+		printf("null\n");
+	}else{
+		printf("1: %x\n",*((int*) tmp->data));
+	}
+
+
+	uint8_t test8;
+	uint16_t test16;
+	uint32_t test32;
+	printf("%d %d %d",sizeof(test8),sizeof(test16),sizeof(test32));
+	return 0;
+}

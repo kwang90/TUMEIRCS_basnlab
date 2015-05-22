@@ -1,0 +1,32 @@
+/*
+ * test.c
+ *
+ *  Created on: 20.03.2013
+ *      Author: kindt
+ */
+
+
+#include "rcs_dsp_iir.h"
+#include "rcs_dsp_iir_pipeline.h"
+#include <stdio.h>
+int Umain(){
+
+		double coeff_Fwd[10] = {0,1,2,3,4,5,6,7,8,9};
+		double coeff_Backwd[10] = {0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5};
+		rcs_dsp_iir fiir;
+		rcs_dsp_iir_init(&fiir);
+		rcs_dsp_iir_setFeedForward(&fiir, 10,  coeff_Fwd);
+		rcs_dsp_iir_setFeedBack(&fiir, 10, coeff_Backwd);
+
+		double signal[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
+		uint32_t cnt = 0;
+		for(cnt = 0; cnt < 20; cnt++){
+			printf("[%d]: %f -> %f\n",cnt,signal[cnt], rcs_dsp_iir_apply(&fiir,signal[cnt]));
+		}
+
+
+		rcs_dsp_iir_pipeline p;
+		rcs_dsp_iir_pipeline_init(&p);
+		return 0;
+}

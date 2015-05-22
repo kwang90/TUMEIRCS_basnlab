@@ -1,0 +1,168 @@
+\hypertarget{classhe2mt_s_d_i}{\section{he2mt\-S\-D\-I Class Reference}
+\label{classhe2mt_s_d_i}\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}}
+}
+
+
+Purely virtual (abstract) class that needs to be implemented to get sensor data via the H\-E2m\-T S\-D\-I The class \char`\"{}generic\-Param\-Interface\char`\"{} is for debugging purposes, only. It is not part of the interface. The standard C++ installation comes with a dummy implementation of \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface} as the accsensor\-\_\-server -\/ application expects it to be there. In Java on a mobile phone, \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface} needs not to be implemented at all.  
+
+
+
+
+{\ttfamily \#include $<$he2mt\-S\-D\-I.\-hpp$>$}
+
+Inheritance diagram for he2mt\-S\-D\-I\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhe2mt_s_d_i}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\-\_\-t \hyperlink{classhe2mt_s_d_i_ad0bd9136f18c52d27b93cfca85bf05dd}{dataslot\-\_\-t}
+\item 
+typedef uint32\-\_\-t \hyperlink{classhe2mt_s_d_i_aa527ccf96fd5eacc154c1c23e56fc9fd}{errorcode\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhe2mt_s_d_i_a6a3b5da850e0571bc4a8c8e0de7ad9e8}{virtual void \hyperlink{classhe2mt_s_d_i_a6a3b5da850e0571bc4a8c8e0de7ad9e8}{init} ()=0}\label{classhe2mt_s_d_i_a6a3b5da850e0571bc4a8c8e0de7ad9e8}
+
+\begin{DoxyCompactList}\small\item\em Initialization function. This function will be called once before any other function is called. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_ae5212f96e535b795b11fd34a89a3d616}{authorize} (char $\ast$application\-I\-D, char $\ast$application\-Secret, char $\ast$username, char $\ast$password)=0
+\begin{DoxyCompactList}\small\item\em authorize sensor aggregation system against remote side This function authorizes the sensor aggregation system against the replication framework and/or appserver. It is oauth-\/compatible. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_a775fcd2c08e923050b76aa750895a983}{set\-Sensor\-Data} (\hyperlink{classhe2mt_s_d_i_ad0bd9136f18c52d27b93cfca85bf05dd}{dataslot\-\_\-t} data\-Slot, char $\ast$sensor\-Address, char $\ast$time\-Stamp\-Sensor, double sampling\-Period, uint32\-\_\-t n\-Values, void $\ast$value\-List)=0
+\begin{DoxyCompactList}\small\item\em write new sensor data This function is called whenever sensor data \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classhe2mt_s_d_i_a7f9d573e91544cc1436dab6bf1a889cf}{disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em disconnect S\-A\-S from the A\-S/\-R\-F. This function is called when the sensor interface wishes to unregister with the A\-S/\-R\-F. The expected behaviour is that the authorization is invalidated. \end{DoxyCompactList}\item 
+virtual \hyperlink{classhe2mt_s_d_i_aa527ccf96fd5eacc154c1c23e56fc9fd}{errorcode\-\_\-t} \hyperlink{classhe2mt_s_d_i_a2f0bf651098d94ab7ffc04f7b3b00fdf}{get\-Last\-Error} ()=0
+\begin{DoxyCompactList}\small\item\em Get the number of the last error that has occurred. The error numbers are defined by the interface and are similar for all implementations of this interface. \end{DoxyCompactList}\item 
+virtual void $\ast$ \hyperlink{classhe2mt_s_d_i_ab95b4854cfc4841a7f2dae073fa011fe}{get\-Application\-Error\-Info} ()=0
+\begin{DoxyCompactList}\small\item\em Get implementation-\/specific information ont the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Purely virtual (abstract) class that needs to be implemented to get sensor data via the H\-E2m\-T S\-D\-I The class \char`\"{}generic\-Param\-Interface\char`\"{} is for debugging purposes, only. It is not part of the interface. The standard C++ installation comes with a dummy implementation of \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface} as the accsensor\-\_\-server -\/ application expects it to be there. In Java on a mobile phone, \hyperlink{classgeneric_param_interface}{generic\-Param\-Interface} needs not to be implemented at all. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classhe2mt_s_d_i_ad0bd9136f18c52d27b93cfca85bf05dd}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!dataslot\-\_\-t@{dataslot\-\_\-t}}
+\index{dataslot\-\_\-t@{dataslot\-\_\-t}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{dataslot\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf he2mt\-S\-D\-I\-::dataslot\-\_\-t}}}\label{classhe2mt_s_d_i_ad0bd9136f18c52d27b93cfca85bf05dd}
+Data type for the data slot numbers \hypertarget{classhe2mt_s_d_i_aa527ccf96fd5eacc154c1c23e56fc9fd}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!errorcode\-\_\-t@{errorcode\-\_\-t}}
+\index{errorcode\-\_\-t@{errorcode\-\_\-t}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{errorcode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf he2mt\-S\-D\-I\-::errorcode\-\_\-t}}}\label{classhe2mt_s_d_i_aa527ccf96fd5eacc154c1c23e56fc9fd}
+Data type for the error codes 
+
+\subsection{Member Function Documentation}
+\hypertarget{classhe2mt_s_d_i_ae5212f96e535b795b11fd34a89a3d616}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!authorize@{authorize}}
+\index{authorize@{authorize}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{authorize}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool he2mt\-S\-D\-I\-::authorize (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{application\-I\-D, }
+\item[{char $\ast$}]{application\-Secret, }
+\item[{char $\ast$}]{username, }
+\item[{char $\ast$}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classhe2mt_s_d_i_ae5212f96e535b795b11fd34a89a3d616}
+
+
+authorize sensor aggregation system against remote side This function authorizes the sensor aggregation system against the replication framework and/or appserver. It is oauth-\/compatible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em application\-I\-D} & String containing the application I\-D \\
+\hline
+{\em application\-Secret} & String containing the application secret \\
+\hline
+{\em username} & string containing the username \\
+\hline
+{\em password} & string containing the passwort of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if successful; False, otherwise. 
+\end{DoxyReturn}
+\hypertarget{classhe2mt_s_d_i_a7f9d573e91544cc1436dab6bf1a889cf}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool he2mt\-S\-D\-I\-::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classhe2mt_s_d_i_a7f9d573e91544cc1436dab6bf1a889cf}
+
+
+disconnect S\-A\-S from the A\-S/\-R\-F. This function is called when the sensor interface wishes to unregister with the A\-S/\-R\-F. The expected behaviour is that the authorization is invalidated. 
+
+\begin{DoxyReturn}{Returns}
+t 
+\end{DoxyReturn}
+\hypertarget{classhe2mt_s_d_i_ab95b4854cfc4841a7f2dae073fa011fe}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!get\-Application\-Error\-Info@{get\-Application\-Error\-Info}}
+\index{get\-Application\-Error\-Info@{get\-Application\-Error\-Info}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{get\-Application\-Error\-Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ he2mt\-S\-D\-I\-::get\-Application\-Error\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classhe2mt_s_d_i_ab95b4854cfc4841a7f2dae073fa011fe}
+
+
+Get implementation-\/specific information ont the error. 
+
+\begin{DoxyReturn}{Returns}
+error information 
+\end{DoxyReturn}
+\hypertarget{classhe2mt_s_d_i_a2f0bf651098d94ab7ffc04f7b3b00fdf}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!get\-Last\-Error@{get\-Last\-Error}}
+\index{get\-Last\-Error@{get\-Last\-Error}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{get\-Last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf errorcode\-\_\-t} he2mt\-S\-D\-I\-::get\-Last\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classhe2mt_s_d_i_a2f0bf651098d94ab7ffc04f7b3b00fdf}
+
+
+Get the number of the last error that has occurred. The error numbers are defined by the interface and are similar for all implementations of this interface. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+Error code of the last error that has occurred. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\hypertarget{classhe2mt_s_d_i_a775fcd2c08e923050b76aa750895a983}{\index{he2mt\-S\-D\-I@{he2mt\-S\-D\-I}!set\-Sensor\-Data@{set\-Sensor\-Data}}
+\index{set\-Sensor\-Data@{set\-Sensor\-Data}!he2mtSDI@{he2mt\-S\-D\-I}}
+\subsubsection[{set\-Sensor\-Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool he2mt\-S\-D\-I\-::set\-Sensor\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf dataslot\-\_\-t}}]{data\-Slot, }
+\item[{char $\ast$}]{sensor\-Address, }
+\item[{char $\ast$}]{time\-Stamp\-Sensor, }
+\item[{double}]{sampling\-Period, }
+\item[{uint32\-\_\-t}]{n\-Values, }
+\item[{void $\ast$}]{value\-List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classhe2mt_s_d_i_a775fcd2c08e923050b76aa750895a983}
+
+
+write new sensor data This function is called whenever sensor data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-Slot} & A data slot identifying the type of data that is to be written (e.\-g., detected activities, raw acceleration, ...) \\
+\hline
+{\em sensor\-Address} & The M\-A\-C adress of the sensor as a string. \\
+\hline
+{\em time\-Stamp\-Sensor} & Time stamp of the first data value created on the sensor \\
+\hline
+{\em n\-Values} & The number of values in value\-List \\
+\hline
+{\em value\-List} & Pointer to a list of values. The type of the values is determined by the data\-Slot. It must be allocated and free'ed by the caller. However, the caller does not need to guaranty the existance of the buffer once the function has compleeted. \\
+\hline
+{\em sampling\-Period,\-:} & Time \mbox{[}s\mbox{]} in between two samples. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if successful; False, otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/kindt/workspace/\-H\-E2m\-T/projects/libs/he2mt\-S\-D\-I/src/\hyperlink{he2mt_s_d_i_8hpp}{he2mt\-S\-D\-I.\-hpp}\end{DoxyCompactItemize}
