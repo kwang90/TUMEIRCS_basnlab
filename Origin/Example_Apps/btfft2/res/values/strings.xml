@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="connections_array">
+        <item>No input</item>
+        <item>Phone</item>
+        <item>Bluetooth</item>
+        <item>File</item>
+    </string-array>
+    
+    <string name="app_name">btfft2</string>
+
+</resources>

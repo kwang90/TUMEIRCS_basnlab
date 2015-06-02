@@ -1,0 +1,39 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/header_connection" >
+        <SwitchPreference
+            android:key="bluetooth"
+            android:title="@string/title_bluetooth" />
+        <SwitchPreference
+            android:key="connection"
+            android:title="@string/title_connection"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/header_instructions" >
+        <Preference
+            android:key="sleep"
+            android:summary="@string/summary_sleep"
+            android:title="@string/title_sleep" />
+        <Preference
+            android:key="sendbt"
+            android:summary="@string/summary_sendbt"
+            android:title="@string/title_sendbt" />
+        <Preference
+            android:key="measure"
+            android:summary="@string/summary_measure"
+            android:title="@string/title_measure" />
+        <Preference
+            android:key="transmit"
+            android:summary="@string/summary_transmit"
+            android:title="@string/title_transmit" />
+        <Preference
+            android:key="erasesd"
+            android:summary="@string/summary_erasesd"
+            android:title="@string/title_erasesd" />
+        <Preference
+            android:key="monitor"
+            android:summary="@string/summary_monitor"
+            android:title="@string/title_montior" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

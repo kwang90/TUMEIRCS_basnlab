@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BASN Control</string>
+    <string name="header_connection">Connection</string>
+    <string name="title_bluetooth">Bluetooth</string>
+    <string name="title_connection">Sensor connection</string>
+    <string name="header_instructions">Instructions</string>
+    <string name="title_sendbt">Send via Bluetooth</string>
+    <string name="summary_sendbt">Starte/Stoppe Messung, speichere Messdaten auf SD­Karte UND sende sie über Bluetooth (0x62)</string>
+    <string name="title_erasesd">Erase SD</string>
+    <string name="summary_erasesd">Lösche SD­Karte (0x65)</string>
+    <string name="title_montior">Monitor</string>
+    <string name="summary_monitor">Monitoring­Funktion mit Übergabeparameter (0x6D)</string>
+    <string name="title_measure">Start Measure</string>
+    <string name="summary_measure">Monitoring­Funktion mit Übergabeparameter (0x6D)</string>
+    <string name="title_transmit">Transmit SD</string>
+    <string name="summary_transmit">Sende alle auf der SD-­Karte gespeicherten Daten über Bluetooth (0x73)</string>
+    <string name="title_sleep">Sleep</string>
+    <string name="summary_sleep">Stoppe jegliche Messung und lege Sensor schlafen (0x78)</string>
+
+</resources>
