@@ -1,0 +1,50 @@
+/**
+*Author : Kun
+*
+*/
+
+Building NDK apps with Android Studio
+==================================================================
+Basic steps
+
+1. Declare method and load library in MyActivity.java
+	declare the method using keyword "native"
+	load library
+
+2. Create JNI folder 
+
+3. Create a c code that defines the method with a Java wrapper header.
+	(In windows, JNI folder needs an empty c file. This is a bug of NDK)
+
+4. Provide NDK path in gradle\local.properties
+	ndk.dir=($absolutepath)\ndk
+	(For windows -> "ndk.dir=C\:\\...\\NDK" )
+
+5. Define ndk module in defaultConfig of build.gradle
+
+Done!
+==================================================================
+(*)Make use of makefiles:
+
+6. Copy Android.mk and Application.mk to JNI folder
+
+7. Stop gradle from ndk built in build.gradle
+	sourceSets.main{
+		jni.srcDirs = [] //ndk-build.cmd needs to be Invoked from command line
+		jni.srcDirs 'src/main/libs'
+	}
+
+8. Call ndk-build to generate lib files
+	(cd src\main)
+	C:\...\ndk-build.cmd
+
+Done!
+=================================================================
+thanks to Gayathri Murali from Intel
+source:https://www.youtube.com/watch?v=kFtxo7rr2HQ
+
+
+
+	
+
+
